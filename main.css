@@ -17,49 +17,81 @@ html{
 body{
     font-family: Poppins, Helvetica, sans-serif;
     max-width: 412px;
-    height: 100vh;
-    /* border: 1px solid blue; */
+    min-height: 100vh;
     padding: 0;
     margin: 0 auto;
     background-color: white;
     position: relative;
     
     header{
-    background-color: #2C437D;
-    height: 64px;
+        background-color: #2C437D;
     }
 
     nav, h1{
         display: flex;
         margin: 0;
+        align-items: center;
 
     }
 
     main{
-        padding: 30px
+        padding: 30px;
+        padding-bottom: 300px;
     }
 
+    h1{
+        color: white;
+        font-size: 22px;
+        align-items: center;
+        font-weight: 600;
+    }
     h2{
         padding: 12px 0;
         color: var(--azul-escuro);
+    
+    }
+    li{
+        list-style: none;
+    }
+    nav > i:hover, nav > div:hover, a i:hover{
+        color: var(--azul-clarinho);
+        cursor: pointer;
     }
 
-    li{
-                list-style: none;
+    .bi::before{
+        vertical-align: 0 !important;}
+
+    button{
+        font-size: 20px;
+        width: 100%;
+        margin-bottom: 16px;
+        padding: 16px 20px;
+        background: none;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        align-items: center;
+        border: 1px solid #2C437D;
+        color: var(--azul-escuro);
+        cursor: pointer;
+        font-weight: 600;
+        
+        .bi::before {
+            vertical-align: -3px !important;
     }
-    i:hover, nav > div:hover, a i:hover{
-        color: var(--azul-clarinho)
+
+    a{
+        width: 100%;
     }
 }
-
 
 .header-inferior{
 
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 30px;
-    height: 100px;
+    padding: 20px 30px;
     border-radius: 10px 10px 0 0;
     position: fixed;
     bottom: 0;
@@ -84,14 +116,12 @@ body{
         gap: 12px;
         color: white;
     }
-    i{
-        font-size: 25px;
+*    i{
         height: 25px;
         margin: 0;
     }
 
-    .bi-house-door::before {
-        vertical-align: 0em;
+    .bi::before{
         font-size: 26px;
     }
     p{
@@ -105,20 +135,18 @@ body{
 
     display: flex;
     align-items: center;
-    padding: 0 30px;
+    padding: 18px 30px;
 
     i{
         color: white;
-        font-size: 26px
+        font-size: 26px;
+        height: 30px;
     }
     nav{
         justify-content: space-between;
         width: 100%;
     }
 
-    h1{
-        align-items: center;
-    }
     h1 p{
         font-style: italic;
         font-size: 16px;
@@ -150,7 +178,12 @@ body{
         
     }
     .betinho-empolgado{
-        width: 150px
+        width: 150px;
+    }
+
+    .betinho-gerente{
+        width: 180px;
+        left: 6px;
     }
     .parte-imagem::before {
         z-index: 1; 
@@ -193,35 +226,37 @@ body{
     #bem-vindo{
         font-size: 20px;
     }
+
 }
 
 .card-column{
     display: flex;
     flex-direction: column;
     gap: 12px;
+    margin-bottom: 10em;
 }
 
 .card{
-    height: 140px;
+    min-height: 140px;
     width: 100%;
     border: 1px solid #2C437D;
     border-radius: 10px ;
     display: flex;
+    justify-content: space-between;
     box-sizing: border-box;
     overflow: hidden;
     cursor: pointer;
 
-
     .betinho{
         position: relative;    
-        width: 41%;
+        width: 39%;
 
         img{
             width: 180px;
             position: absolute;
             z-index: 2;
             top: 12px;
-            right: 5px;
+            right: 8px;
         }
     }
 
@@ -234,7 +269,7 @@ body{
         right: 0;
         bottom: 0;
         background-color: var(--azul-vibrante);
-        clip-path: polygon(60% 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%);
     
     }
 
@@ -247,6 +282,7 @@ body{
         ol{
             display: flex;
             gap: 10px;
+            padding-bottom: 3px;
         }
 
         li{
@@ -260,14 +296,43 @@ body{
 
         h3{
             color: var(--azul-vibrante);
+            line-height: 120%;
         }
 
         p{
             font-size: 14px;
         }
         
+        
+
     }
+
+    .betinho-menor{
+        width: 140px !important;
+    }
+
+    .betinho-natacao{
+        width: 260px !important;
+        right: -110px !important;
+    }
+    .betinho-beach-tennis{
+        right: -20px !important;
+    }
+
+    .betinho-lutas{
+        transform: scaleX(-1);
+    }
+
+    
+    
+
 }
+
+.card:hover{
+
+        background-color: #d6e2ff;
+    }
+
 
 .filtros{
     padding-bottom: 12px;
@@ -290,6 +355,15 @@ body{
         height: 30px
     }
 
+    .filtro:hover{
+        color: white;
+        background-color: #2C437D;
+    }
+
+     .bi-filter-right:hover{
+        color: var(--azul-clarinho);
+        cursor: pointer;
+    }
     .bi-filter-right::before{
         font-size: 26px;
         
@@ -297,7 +371,115 @@ body{
     .bi-caret-down{
         height: 14px;
     }
-    .bi-caret-down::before{
-        vertical-align: 0em;
+}
+
+.informacoes-turma{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #2C437D;
+    border-radius: 10px;
+    padding-top: 20px;
+    
+    ol{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 30px;
+        padding-top: 20px;
     }
+
+    li{
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        color: var(--azul-escuro);
+        padding-bottom: 20px;
+    }
+
+    i{
+        font-size: 20px;
+        cursor: default !important;
+    }
+    i:hover{
+        color: --;
+    }
+    .classificacao, .informacao{
+        font-size: 16px;
+    }
+
+    .classificacao{
+        font-weight: 600;
+    }
+
+    .parte-betinho::before {
+        z-index: 1; 
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--azul-clarinho);
+        clip-path: path('M 0,110 Q 125,200 250,150 T 500,100 L 500,250 L 0,250 Z');
+        padding-bottom: 10px; 
+        box-sizing: border-box;
+    }
+    .parte-betinho{
+        height: 250px;
+        width: 100%;
+        position:relative;
+        z-index: 1;
+
+        img{
+            height: 220px;
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+    }
+}
+
+.opcoes-gerente{
+    margin: 32px 0 120px 0;
+
+    .linha-botoes{
+        display: flex;
+        gap: 12px;
+    }
+
+    button:hover{
+        color: white;
+        background-color: var(--azul-vibrante);
+    }
+
+    #excluir{
+        color: red;
+        border: 1px solid red;}
+
+    #excluir:hover{
+        color: white;
+        background-color: rgb(211, 84, 84);}
+        
+    }
+
+#inscrever-se{
+    margin: 32px 0;
+    color: green;
+    background-color: rgb(120, 247, 120);
+    border: 2px solid green;
+    
+    i{
+        font-size: 26px;
+    }
+}
+
+#inscrever-se:hover{
+    color: white;
+    background-color: rgb(37, 190, 37);
+}
+
 }
