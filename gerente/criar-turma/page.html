@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <title>CODESP - Tela Inicial</title>
+</head>
+<body>
+    
+    <header class="header-superior">
+        <nav>
+            <a href="../tela-inicial/tela-inicial.html"><i class="bi bi-arrow-left"></i></a>
+            <h1>Criar turma</h1>
+            <a href=""><i class="bi bi-question-circle"></i></a>
+        </nav>
+    </header>
+
+    <header class="header-inferior">
+        <nav>
+            <div>
+                <a href="../tela-inicial/tela-inicial.html"><i class="bi bi-house-door"></i></a>
+                <p> Tela Inicial</p>
+            </div>
+            <div>
+                <a href=""><i class="bi bi-plus-circle"></i></a>
+                <p>Criar Turmas</p>
+            </div>
+            <div>
+                <a href=""><i class="bi bi-person"></i></a>
+                <p>Meu Perfil</p>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+      
+        <div class="criar-turma">
+           <form action="/salvar-turma" method="POST">
+                <div>
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Ex: Turma A - Iniciantes" required>
+                </div>
+                
+                <div>
+                    <label for="modalidade">Modalidade</label>
+
+                    <div class="select-container">
+                    <select id="modalidade" name="modalidade" required>
+                        <option value="" disabled selected>Modalidade</option>
+                        <option value="futebol">Futebol</option>
+                        <option value="natacao">Natação</option>
+                        <option value="yoga">Yoga</option>
+                    </select>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="horario">Horário</label>
+                    <input type="text" id="horario" name="horario" placeholder="Ex: 9h-10h30" required>
+                </div>
+                
+                <div>
+                    <label for="dias">Dias da semana</label>
+                    <input type="text" id="dias" name="dias" placeholder="Ex: Seg, Qua e Sex" required>
+                </div>
+                
+                <div>
+                    <label for="professor">Professor(a)</label>
+                    <input type="text" id="professor" name="professor" placeholder="Nome do instrutor(a)" required>
+                </div>
+                
+                <div>
+                    <label for="local">Local</label>
+                    <div class="select-container">
+                    <select id="local" name="local" required>
+                        <option value="" disabled selected>Selecione o local</option>
+                        <option value="quadra-a">Quadra A</option>
+                        <option value="piscina">Piscina Olímpica</option>
+                        <option value="sala-1">Sala de Ginástica 1</option>
+                    </select>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="vagas">Vagas</label>
+                    <input type="number" id="vagas" name="vagas" min="1" placeholder="Ex: 20" required>
+                </div>
+                
+                <div>
+                    <label for="semestre">Semestre</label>
+                    <input type="text" id="semestre" name="semestre" value="2026.1" required disabled>
+                </div>
+                
+                <button type="submit">Criar Turma</button>
+            </form>
+        </div>
+
+        <div class="turmas-recentes">
+            <h2>Turmas recentes</h2>
+
+            <div class="card-column">
+                <!-- volei de areia -->
+                <div class="card">
+                    <div class="informacoes">
+                        <ol class="tags">
+                            <li>aberta</li>
+                            <li>2026.1</li>
+                        </ol>
+
+                        <h3>Vôlei de areia</h3>
+
+                        <p>Seg. qua. sex. (14h-15h30)</p>
+
+                    </div>
+
+                    <div class="betinho">
+                        <img src="../../assets/Betinhos/betinho-beach-volei.png" alt="">
+                    </div>
+                </div>
+                <!-- futebol -->
+                <div class="card">
+                    <div class="informacoes">
+                        <ol class="tags">
+                            <li>aberta</li>
+                            <li>2026.1</li>
+                        </ol>
+
+                        <h3>Futebol</h3>
+
+                        <p>Seg. qua. sex. (14h-15h30)</p>
+
+                    </div>
+
+                    <div class="betinho">
+                        <img src="../../assets/Betinhos/betinho-futebol.png" alt="" class="betinho-menor">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    
+</body>
+</html>
+
+

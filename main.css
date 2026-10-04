@@ -3,6 +3,12 @@
     --azul-clarinho: #A1B8F2;
     --azul-escuro: #2C437D;
     --azul-vibrante: #5F70E8;
+    --off-white: #EEF2F1;
+    --verde-inscrever-se: #55BE65;
+    --verde-escuro-inscrever-se: #012B12;
+    --vermelho-excluir: #BA0707;
+    --azul-editar: #1831E0;
+
 
 }
 
@@ -13,20 +19,26 @@ html{
 *{
     padding: 0;
     margin: 0;
+    font-family: Poppins, Helvetica, sans-serif;
 }
 body{
-    font-family: Poppins, Helvetica, sans-serif;
     max-width: 412px;
     min-height: 100vh;
     padding: 0;
     margin: 0 auto;
-    background-color: white;
+    background-color: var(--off-white);
     position: relative;
     
     header{
         background-color: #2C437D;
     }
 
+    a{
+        display: block;
+        color: white;
+        text-decoration: none;
+    }
+    
     nav, h1{
         display: flex;
         margin: 0;
@@ -35,8 +47,9 @@ body{
     }
 
     main{
+        box-sizing: border-box;
         padding: 30px;
-        padding-bottom: 300px;
+        padding-bottom: 2px;
     }
 
     h1{
@@ -53,13 +66,14 @@ body{
     li{
         list-style: none;
     }
-    nav > i:hover, nav > div:hover, a i:hover{
+    div:hover a > i, nav > div:hover, a:hover i{
         color: var(--azul-clarinho);
         cursor: pointer;
     }
 
     .bi::before{
-        vertical-align: 0 !important;}
+        vertical-align: 0 !important;
+    }
 
     button{
         font-size: 20px;
@@ -79,12 +93,84 @@ body{
         
         .bi::before {
             vertical-align: -3px !important;
+         }
+        }
+
+    label{
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--azul-escuro);
     }
 
-    a{
+    form > div{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-bottom: 20px;
+    }
+
+    input, select{
+        height: 48px;
+        box-sizing: border-box;
+        padding: 0 18px;
+        border-radius: 5px;
+        background: none;
+        border: 1px solid #2C437D;
         width: 100%;
     }
+    
+    input:focus, select:focus{
+        outline: none;
+        border: 2px solid #2C437D;
+    }
+
+    button[type="submit"]{
+        color: white;
+        background-color: var(--azul-vibrante);
+        border: none;}
+
+    .select-container{
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    } 
+    select{
+        width: 100%;
+        padding-right: 40px; 
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        color: #2C437D;
+        
+        cursor: pointer;
+        position: relative;
+    }
+
+    .select-container::after {
+            content: "\F22C"; /* Código Unicode do chevron-down do Bootstrap */
+            font-family: "bootstrap-icons"; /* Ativa a fonte de ícones */
+            font-size: 20px;
+            color: var(--azul-escuro);
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none; /* Permite clicar através da seta para abrir o select */
+        }
+
+    input[placeholder]{
+        font-size: 14px;
+    }
+
+    #semestre{
+        background-color: #A1B8F2;
+        border: none;
+        color: var(--azul-escuro);
+        margin-bottom: 20px;
+    }
+
 }
+
 
 .header-inferior{
 
@@ -92,7 +178,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 20px 30px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 20px 20px 0 0;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -102,10 +188,12 @@ body{
     box-sizing: border-box;
     z-index: 10;
     
+    
     nav{
         display: flex;
         justify-content: space-between;
-        width: 100%
+        width: 100%;
+        padding-top: 10px;
     }
 
     div{
@@ -113,12 +201,8 @@ body{
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        gap: 12px;
+        gap: 4px;
         color: white;
-    }
-*    i{
-        height: 25px;
-        margin: 0;
     }
 
     .bi::before{
@@ -137,10 +221,13 @@ body{
     align-items: center;
     padding: 18px 30px;
 
+    a{
+     height: 26px;
+    }
+
     i{
         color: white;
         font-size: 26px;
-        height: 30px;
     }
     nav{
         justify-content: space-between;
@@ -301,6 +388,7 @@ body{
 
         p{
             font-size: 14px;
+            color: var(--azul-escuro);
         }
         
         
@@ -329,10 +417,8 @@ body{
 }
 
 .card:hover{
-
         background-color: #d6e2ff;
     }
-
 
 .filtros{
     padding-bottom: 12px;
@@ -421,27 +507,30 @@ body{
         right: 0;
         bottom: 0;
         background-color: var(--azul-clarinho);
-        clip-path: path('M 0,110 Q 125,200 250,150 T 500,100 L 500,250 L 0,250 Z');
-        padding-bottom: 10px; 
+        clip-path: path('M 0,80 Q 125,170 250,120 T 500,70 L 500,250 L 0,250 Z');
         box-sizing: border-box;
     }
     .parte-betinho{
-        height: 250px;
+        height: 230px;
         width: 100%;
         position:relative;
         z-index: 1;
+        margin-top:12px;
+        
 
         img{
-            height: 220px;
+            max-height: 220px;
+            max-width: 300px;
             position: absolute;
             z-index: 2;
-            top: 50%;
+            top: 45%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
 
     }
 }
+
 
 .opcoes-gerente{
     margin: 32px 0 120px 0;
@@ -456,21 +545,29 @@ body{
         background-color: var(--azul-vibrante);
     }
 
+    #editar{
+        color: var(--azul-editar);
+        border: 1px solid #1831E0;
+    }
+    #editar:hover{
+        color: white;
+        background-color: var(--azul-editar);
+    }
     #excluir{
-        color: red;
-        border: 1px solid red;}
+        color: var(--vermelho-excluir);
+        border: 1px solid #BA0707;}
 
     #excluir:hover{
         color: white;
-        background-color: rgb(211, 84, 84);}
+        background-color: var(--vermelho-excluir);}
         
     }
 
 #inscrever-se{
     margin: 32px 0;
-    color: green;
-    background-color: rgb(120, 247, 120);
-    border: 2px solid green;
+    color: var(--verde-escuro-inscrever-se);
+    background-color: #50b660;
+    border: none;
     
     i{
         font-size: 26px;
@@ -479,7 +576,108 @@ body{
 
 #inscrever-se:hover{
     color: white;
-    background-color: rgb(37, 190, 37);
+    background-color: #50b660;
 }
+
+.criar-turma{
+    border: 1px solid #2C437D;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+
+
+
+
+}
+
+.turmas-recentes{
+    margin-top: 20px;
+}
+
+.ola-sou-betinho{
+    background-image: url(assets/fundo-gradiente.png);
+    height: 240px;
+    display: flex;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    .parte-texto, .parte-imagem{width: 50%;}
+    div img{
+        position: absolute;
+        width:200px;
+        z-index: 2;
+        top: 32px;
+        }
+
+    div p{
+        color: white;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 120%;                   
+    }
+
+
+    #ola{
+        font-size: 36px;
+    }
+    .parte-texto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        padding: 30px;
+        padding-bottom: 50px;
+    }
+
+}
+
+main.arredondado{
+    position: absolute;
+    width: 100%;
+    /* border: 1px solid black; */
+    border-radius: 20px 20px 0 0;
+    z-index: 3;
+    background-color: var(--off-white);
+    top: 200px;
+
+    .opcoes-login{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+
+    form > div{
+        padding: 12px 0;
+    }
+    #continuar-logado{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--azul-escuro);
+        padding-bottom: 12px;
+        
+        input{
+            height: 20px;
+            width: min-content;
+            background: none;
+            outline: none;
+        }
+    }
+    
+    #esqueci-senha, #cadastro a{
+        color: var(--azul-vibrante);
+        text-decoration: underline;
+        font-size: 16px;
+    }
+
+    #cadastro{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        gap: 2px;
+        margin: 18px 0;
+    }
 
 }
